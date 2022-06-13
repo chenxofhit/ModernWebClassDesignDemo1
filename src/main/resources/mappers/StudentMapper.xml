@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.keshe.mapper.StudentMapper">
+    <!--    int insertstudent(student student);-->
+    <insert id="insertstudent" parameterType="com.keshe.pojo.Student">
+        insert into student(Sname,Snum,Bnum,Pwd) values (#{Sname},#{Snum},#{Bnum},#{Pwd})
+    </insert>
+    <!--    student selectstudent(Integer Snum);-->
+    <select id="selectstudent" resultType="com.keshe.pojo.Student">
+        select* from student where Snum=#{Snum}
+    </select>
+    <!--    int deletstudent(Integer Bnum);-->
+    <delete id="deletstudent" >
+        delete from student where Bnum=#{Bnum}
+    </delete>
+</mapper>
